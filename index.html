@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Online Check-in | Olli's Corner Firenze</title>
     <style>
         :root {
@@ -11,6 +11,7 @@
             --bg-color: #f4f3f8;
             --text-color: #333333;
             --card-bg: #ffffff;
+            --border-color: #ede8f7;
         }
 
         body {
@@ -29,19 +30,33 @@
             width: 100%;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(136, 113, 185, 0.15);
+            box-shadow: 0 8px 24px rgba(136, 113, 185, 0.12);
             border-top: 8px solid var(--primary-color);
+            border: 1px solid var(--border-color);
         }
 
-        /* ── HEADER BANNER CON IMMAGINE DA GITHUB ── */
+        /* ── HEADER BANNER: IMMAGINE COMPLETA E RIDIMENSIONATA (NO TAGLI) ── */
         .header {
             background-image: url('banner-checkin.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 220px; /* Altezza ottimale per mostrare la foto e la scritta nitidamente */
+            
+            /* FIX: Usiamo 'contain' per garantire che tutta l'immagine sia visibile senza ritagli */
+            background-size: contain; 
+            background-position: center top; /* Allineamento al centro/top per sicurezza */
+            background-repeat: no-repeat;
+            
+            /* TECNICA PADDING-TOP PER RAPPORTO D'ASPETTO RESPONSIVE (21:9)
+               Calcolo: (Altezza Immagine / Larghezza Immagine) * 100
+               9 / 21 * 100 = 42.85% */
+            width: 100%;
+            height: 0; /* Rimuoviamo l'altezza fissa */
+            padding-top: 42.85%; /* Altezza proporzionale responsiva */
+            
             border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(136, 113, 185, 0.1);
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(136, 113, 185, 0.08);
+            
+            /* Sfondo di sicurezza dietro l'immagine (stesso colore della card) */
+            background-color: var(--card-bg); 
         }
 
         .section-title {
@@ -54,6 +69,7 @@
             margin-top: 30px;
             display: flex;
             justify-content: space-between;
+            font-weight: 600;
         }
 
         .form-group { margin-bottom: 15px; }
@@ -72,6 +88,7 @@
             border: 1px solid #ddd;
             border-radius: 6px;
             box-sizing: border-box;
+            font-family: inherit;
         }
 
         .grid-2 {
@@ -94,18 +111,25 @@
             font-weight: bold;
             cursor: pointer;
             margin-top: 40px;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(136, 113, 185, 0.2);
         }
         
         .submit-btn:hover {
             background-color: var(--primary-light);
+            transform: translateY(-2px);
         }
+        
         @media (max-width: 600px) {
             .grid-2 {
                 grid-template-columns: 1fr;
             }
+            .form-container {
+                padding: 20px;
+            }
             .header {
-                height: 160px; /* Leggermente più basso sui telefoni per non rubare troppo spazio */
+                /* Non serve cambiare l'altezza qui, il padding gestisce tutto in modo responsivo */
+                /* Rimosso l'old height: 160px; */
             }
         }
     </style>
@@ -283,17 +307,17 @@
             };
 
             for(let i = 1; i <= numOspiti; i++) {
-                let fileInput = document.getElementById('g' + i + '_photo');
+                let fileInput = document.getElementById('g' + i + 'photo');
                 let fileData = await getBase64(fileInput.files[0]);
                 payload.ospiti.push({
-                    nome: document.getElementById('g' + i + '_firstName').value,
-                    cognome: document.getElementById('g' + i + '_lastName').value,
-                    sesso: document.getElementById('g' + i + '_gender').value,
-                    dataNas: document.getElementById('g' + i + '_dob').value,
-                    luogoNas: document.getElementById('g' + i + '_pob').value,
-                    cittadinanza: document.getElementById('g' + i + '_cit').value,
-                    tipoDoc: document.getElementById('g' + i + '_docT').value,
-                    numDoc: document.getElementById('g' + i + '_docN').value,
+                    nome: document.getElementById('g' + i + 'firstName').value,
+                    cognome: document.getElementById('g' + i + 'lastName').value,
+                    sesso: document.getElementById('g' + i + 'gender').value,
+                    dataNas: document.getElementById('g' + i + 'dob').value,
+                    luogoNas: document.getElementById('g' + i + 'pob').value,
+                    cittadinanza: document.getElementById('g' + i + 'cit').value,
+                    tipoDoc: document.getElementById('g' + i + 'docT').value,
+                    numDoc: document.getElementById('g' + i + 'docN').value,
                     foto: fileData
                 });
             }
