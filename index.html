@@ -202,7 +202,7 @@
         .submit-btn:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(92, 61, 153, 0.35); }
         .submit-btn:disabled { background: var(--text-muted); cursor: not-allowed; transform: none; box-shadow: none; }
 
-        /* ── MESSAGGIO DI SUCCESSO (Sostituisce l'alert) ── */
+        /* ── MESSAGGIO DI SUCCESSO ── */
         #success-message {
             display: none;
             text-align: center;
@@ -213,12 +213,7 @@
             border: 1px solid var(--border);
         }
 
-        #success-message i {
-            font-size: 60px;
-            color: var(--success);
-            margin-bottom: 20px;
-        }
-
+        #success-message i { font-size: 60px; color: var(--success); margin-bottom: 20px; }
         #success-message h2 { color: var(--primary-dark); margin: 0 0 10px 0; }
         #success-message p { color: var(--text-muted); line-height: 1.5; }
 
@@ -321,20 +316,10 @@
                     <div class="form-group"><label data-i18n="nationality">Nationality</label><input type="text" id="g2_cit" class="req-field"></div>
                     <div class="form-group"><label data-i18n="pob">Town/City of Birth</label><input type="text" id="g2_pob" class="req-field"></div>
                 </div>
-                <div class="grid-2">
+                <div class="grid-2" style="margin-bottom: 0;">
                     <div class="form-group"><label data-i18n="resCountry">Country of Residence</label><input type="text" id="g2_resState" class="req-field"></div>
                     <div class="form-group"><label data-i18n="resCity">City of Residence</label><input type="text" id="g2_resCity" class="req-field"></div>
                 </div>
-                <div class="sub-section-title"><i class="fa-solid fa-passport"></i> <span data-i18n="idDocument">ID Document</span></div>
-                <div class="grid-2">
-                    <div class="form-group"><label data-i18n="docType">Doc. Type</label><select id="g2_docT" class="req-field"><option value="ID CARD" data-i18n="docTypeIdCard">National ID Card</option><option value="PASSPORT" data-i18n="docTypePassport">Passport</option></select></div>
-                    <div class="form-group"><label data-i18n="docNumber">Doc. Number</label><input type="text" id="g2_docN" class="req-field"></div>
-                </div>
-                <div class="grid-2">
-                    <div class="form-group"><label data-i18n="issuingCountry">Issuing Country</label><input type="text" id="g2_docState" class="req-field"></div>
-                    <div class="form-group"><label data-i18n="issuingCity">Issuing Authority/Office</label><input type="text" id="g2_docCity" class="req-field"></div>
-                </div>
-                <div class="form-group" style="margin-bottom: 0;"><label data-i18n="uploadPhoto">Upload ID Photo (Front/Back)</label><input type="file" id="g2_photo" accept="image/*,application/pdf" class="req-field"></div>
             </div>
 
             <div id="section-guest-3" class="card guest-section">
@@ -352,20 +337,10 @@
                     <div class="form-group"><label data-i18n="nationality">Nationality</label><input type="text" id="g3_cit" class="req-field"></div>
                     <div class="form-group"><label data-i18n="pob">Town/City of Birth</label><input type="text" id="g3_pob" class="req-field"></div>
                 </div>
-                <div class="grid-2">
+                <div class="grid-2" style="margin-bottom: 0;">
                     <div class="form-group"><label data-i18n="resCountry">Country of Residence</label><input type="text" id="g3_resState" class="req-field"></div>
                     <div class="form-group"><label data-i18n="resCity">City of Residence</label><input type="text" id="g3_resCity" class="req-field"></div>
                 </div>
-                <div class="sub-section-title"><i class="fa-solid fa-passport"></i> <span data-i18n="idDocument">ID Document</span></div>
-                <div class="grid-2">
-                    <div class="form-group"><label data-i18n="docType">Doc. Type</label><select id="g3_docT" class="req-field"><option value="ID CARD" data-i18n="docTypeIdCard">National ID Card</option><option value="PASSPORT" data-i18n="docTypePassport">Passport</option></select></div>
-                    <div class="form-group"><label data-i18n="docNumber">Doc. Number</label><input type="text" id="g3_docN" class="req-field"></div>
-                </div>
-                <div class="grid-2">
-                    <div class="form-group"><label data-i18n="issuingCountry">Issuing Country</label><input type="text" id="g3_docState" class="req-field"></div>
-                    <div class="form-group"><label data-i18n="issuingCity">Issuing Authority/Office</label><input type="text" id="g3_docCity" class="req-field"></div>
-                </div>
-                <div class="form-group" style="margin-bottom: 0;"><label data-i18n="uploadPhoto">Upload ID Photo (Front/Back)</label><input type="file" id="g3_photo" accept="image/*,application/pdf" class="req-field"></div>
             </div>
 
             <div id="section-guest-4" class="card guest-section">
@@ -383,20 +358,10 @@
                     <div class="form-group"><label data-i18n="nationality">Nationality</label><input type="text" id="g4_cit" class="req-field"></div>
                     <div class="form-group"><label data-i18n="pob">Town/City of Birth</label><input type="text" id="g4_pob" class="req-field"></div>
                 </div>
-                <div class="grid-2">
+                <div class="grid-2" style="margin-bottom: 0;">
                     <div class="form-group"><label data-i18n="resCountry">Country of Residence</label><input type="text" id="g4_resState" class="req-field"></div>
                     <div class="form-group"><label data-i18n="resCity">City of Residence</label><input type="text" id="g4_resCity" class="req-field"></div>
                 </div>
-                <div class="sub-section-title"><i class="fa-solid fa-passport"></i> <span data-i18n="idDocument">ID Document</span></div>
-                <div class="grid-2">
-                    <div class="form-group"><label data-i18n="docType">Doc. Type</label><select id="g4_docT" class="req-field"><option value="ID CARD" data-i18n="docTypeIdCard">National ID Card</option><option value="PASSPORT" data-i18n="docTypePassport">Passport</option></select></div>
-                    <div class="form-group"><label data-i18n="docNumber">Doc. Number</label><input type="text" id="g4_docN" class="req-field"></div>
-                </div>
-                <div class="grid-2">
-                    <div class="form-group"><label data-i18n="issuingCountry">Issuing Country</label><input type="text" id="g4_docState" class="req-field"></div>
-                    <div class="form-group"><label data-i18n="issuingCity">Issuing Authority/Office</label><input type="text" id="g4_docCity" class="req-field"></div>
-                </div>
-                <div class="form-group" style="margin-bottom: 0;"><label data-i18n="uploadPhoto">Upload ID Photo (Front/Back)</label><input type="file" id="g4_photo" accept="image/*,application/pdf" class="req-field"></div>
             </div>
         </div>
 
@@ -507,7 +472,6 @@
         }
     };
 
-    // Logica di Fallback Robusta (Default Inglese, Italiano solo se esplicito)
     let currentLang = 'en';
 
     window.onload = function() {
@@ -515,9 +479,7 @@
         document.getElementById('portalSource').value = (urlParams.get('p') === 'airbnb') ? 'Airbnb' : 'Booking';
         
         const browserLang = navigator.language || navigator.userLanguage;
-        if (browserLang.toLowerCase().startsWith('it')) {
-            currentLang = 'it';
-        }
+        if (browserLang.toLowerCase().startsWith('it')) { currentLang = 'it'; }
         
         applyTranslations();
         aggiornaOspiti();
@@ -525,17 +487,11 @@
 
     function applyTranslations() {
         const langData = i18n[currentLang];
-        
-        // Traduzione testi normali (Inclusi i tag <option>)
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
-            if (langData[key]) {
-                // innerText è più sicuro di textContent per le opzioni delle tendine sui vecchi browser
-                element.innerText = langData[key];
-            }
+            if (langData[key]) { element.innerText = langData[key]; }
         });
 
-        // Traduzione Placeholder
         for(let i=1; i<=4; i++) {
             if(document.getElementById(`g${i}_firstName`)) document.getElementById(`g${i}_firstName`).placeholder = langData.placeholderFirstName;
             if(document.getElementById(`g${i}_lastName`)) document.getElementById(`g${i}_lastName`).placeholder = langData.placeholderLastName;
@@ -548,14 +504,11 @@
         }
     }
 
-    // Gestione visualizzazione ospiti - Ora richiede solo gli elementi con classe "req-field"
     function aggiornaOspiti() {
         const numero = parseInt(document.getElementById('totalGuests').value);
         for (let i = 1; i <= 4; i++) {
             const section = document.getElementById('section-guest-' + i);
-            // Prende solo i campi con la classe 'req-field' invece di tutti gli input alla cieca
             const inputs = section.querySelectorAll('.req-field');
-            
             if (i <= numero) {
                 section.style.display = 'block';
                 inputs.forEach(input => input.setAttribute('required', 'true'));
@@ -600,7 +553,9 @@
 
             for(let i = 1; i <= numOspiti; i++) {
                 let fileInput = document.getElementById('g' + i + '_photo');
-                let fileData = await getBase64(fileInput.files[0]);
+                let fileData = fileInput && fileInput.files[0] ? await getBase64(fileInput.files[0]) : null;
+                
+                // Costruisce la riga in modo che passi valori vuoti per i documenti degli ospiti 2,3,4 senza rompere Excel
                 payload.ospiti.push({
                     nome: document.getElementById('g' + i + '_firstName').value,
                     cognome: document.getElementById('g' + i + '_lastName').value,
@@ -610,10 +565,10 @@
                     luogoNas: document.getElementById('g' + i + '_pob').value,
                     resStato: document.getElementById('g' + i + '_resState').value,
                     resComune: document.getElementById('g' + i + '_resCity').value,
-                    tipoDoc: document.getElementById('g' + i + '_docT').value,
-                    numDoc: document.getElementById('g' + i + '_docN').value,
-                    docStato: document.getElementById('g' + i + '_docState').value,
-                    docComune: document.getElementById('g' + i + '_docCity').value,
+                    tipoDoc: document.getElementById('g' + i + '_docT') ? document.getElementById('g' + i + '_docT').value : "",
+                    numDoc: document.getElementById('g' + i + '_docN') ? document.getElementById('g' + i + '_docN').value : "",
+                    docStato: document.getElementById('g' + i + '_docState') ? document.getElementById('g' + i + '_docState').value : "",
+                    docComune: document.getElementById('g' + i + '_docCity') ? document.getElementById('g' + i + '_docCity').value : "",
                     foto: fileData
                 });
             }
@@ -627,11 +582,9 @@
 
             let result = await response.json();
             
-            // Addio noiosi Alert! Benvenuta schermata di successo
             if(result.status === "success") {
                 document.getElementById('checkinForm').style.display = 'none';
                 document.getElementById('success-message').style.display = 'block';
-                // Riporta l'utente in cima alla pagina per fargli leggere il messaggio
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
                 alert("Error: " + result.message);
